@@ -3,6 +3,7 @@
 }
 
 table{
+    align:center;
     animation: alternate-reverse;
     width:50%;
 }

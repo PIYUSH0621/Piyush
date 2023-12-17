@@ -4,6 +4,7 @@
 
 table{
     animation: alternate-reverse;
+    width:50%;
 }
 
 img{

@@ -5,3 +5,7 @@
 table{
     animation: alternate-reverse;
 }
+
+img{
+    border-radius: 10px;
+}

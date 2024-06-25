@@ -1,22 +1,57 @@
-*{
-    text-align: center;
-    font-family: 'Poppins', sans-serif ;
+* {
+  text-align: center;
+  font-family: "Poppins", sans-serif;
 }
 
-table{
-    align:center;
-    animation: alternate-reverse;
-    width:70%;
-    height:40%
+html {
+  scroll-behavior: smooth;
 }
 
-img{
-    border-radius: 10px;
+img {
+  border-radius: 3%;
 }
 
-a{
-    color:green;
-    text-decoration:none;
+table {
+  border-collapse: collapse;
+  width: 90%;
 }
 
+a {
+  color: rgb(108, 25, 74);
+  text-decoration: none;
+}
 
+#box {
+  height: 7vh;
+  width: auto;
+  background-color: rgb(225, 120, 190);
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  text-transform: capitalize;
+  border-radius: 10px;
+}
+
+.d1 {
+  height: 4.5vh;
+  width: 17.9%;
+  background-color: #e487bc;
+  box-sizing: border-box;
+  margin: 1%;
+  border-radius: 8px;
+}
+
+.d2 {
+    height: 4.5vh;
+    width: 98%;
+    background-color: #e487bc;
+    box-sizing: border-box;
+    margin: 1%;
+    border-radius: 8px;
+  }
+
+
+.right-align {
+    float: right;
+    margin: 0 0 10px 10px; /* This adds some space around the image */
+  }

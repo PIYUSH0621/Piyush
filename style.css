@@ -77,6 +77,22 @@ a:hover {
   }
 }
 
+@media (min-width: 769px) {
+  /* For medium to larger screens */
+  #box {
+    flex-wrap: wrap; /* Allow items to wrap if necessary */
+  }
+
+  .d1 {
+    width: 30%; /* Set width for three links per row */
+  }
+
+  /* Optional: adjust height for the box if needed */
+  #box {
+    height: 8vh; /* Increase height for better spacing */
+  }
+}
+
 @media (max-width: 768px) {
   #box {
     flex-direction: column; /* Stack navigation items */

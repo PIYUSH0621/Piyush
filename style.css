@@ -14,11 +14,17 @@ img {
 table {
   border-collapse: collapse;
   width: 90%;
+  margin: 0 auto; /* Center the table */
 }
 
 a {
   color: rgb(108, 25, 74);
   text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline; /* Underline on hover */
+  color: rgb(85, 10, 55); /* Darker color on hover */
 }
 
 #box {
@@ -27,9 +33,11 @@ a {
   background-color: rgb(225, 120, 190);
   display: flex;
   justify-content: space-between;
+  align-items: center; /* Center items vertically */
   font-weight: bold;
   text-transform: capitalize;
   border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow */
 }
 
 .d1 {
@@ -39,19 +47,66 @@ a {
   box-sizing: border-box;
   margin: 1%;
   border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add shadow */
 }
 
 .d2 {
-    height: 4.5vh;
-    width: 98%;
-    background-color: #e487bc;
-    box-sizing: border-box;
-    margin: 1%;
-    border-radius: 8px;
-  }
-
+  height: 4.5vh;
+  width: 98%;
+  background-color: #e487bc;
+  box-sizing: border-box;
+  margin: 1%;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add shadow */
+}
 
 .right-align {
-    float: right;
-    margin: 0 0 10px 10px; /* This adds some space around the image */
+  float: right;
+  margin: 0 0 10px 10px; /* Space around the image */
+}
+
+/* Media Queries */
+@media (max-width: 1200px) {
+  #box {
+    flex-direction: column; /* Stack items on smaller screens */
+    height: auto; /* Allow height to adjust */
   }
+
+  .d1 {
+    width: 80%; /* Wider buttons on smaller screens */
+  }
+}
+
+@media (max-width: 768px) {
+  #box {
+    flex-direction: column; /* Stack navigation items */
+  }
+
+  .d1 {
+    width: 90%; /* Further adjust width */
+  }
+
+  img {
+    width: 100%; /* Make image responsive */
+    height: auto; /* Maintain aspect ratio */
+  }
+}
+
+@media (max-width: 480px) {
+  #box {
+    height: auto; /* Allow height to adjust */
+  }
+
+  .d1 {
+    width: 95%; /* Adjust width for very small screens */
+    margin: 0.5%; /* Reduce margin for smaller screens */
+  }
+
+  h1, h2, h3 {
+    font-size: 1.5em; /* Adjust font size for better readability */
+  }
+
+  p {
+    font-size: 1em; /* Adjust paragraph font size */
+  }
+}

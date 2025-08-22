@@ -3,7 +3,184 @@
   <head>
     <title>Piyush Document</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="style.css" />
+    <style>
+      body {
+        font-family: 'Segoe UI', Arial, sans-serif;
+        background: linear-gradient(120deg, #ffe0ec 0%, #fffbea 100%);
+        color: #2c2342;
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
+      }
+      body h1, body h2, body h3, body table, body img, #navbar, #socials, .footer, .qa-section {
+        opacity: 0;
+        transform: translateY(40px);
+        transition: opacity 1s cubic-bezier(.5,1,.89,1), transform 1s;
+      }
+      body.loaded h1, 
+      body.loaded h2,
+      body.loaded h3,
+      body.loaded table,
+      body.loaded img,
+      body.loaded #navbar,
+      body.loaded #socials,
+      body.loaded .footer,
+      body.loaded .qa-section {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      #navbar, #socials {
+        display: flex;
+        justify-content: center;
+        gap: 28px;
+        background: linear-gradient(90deg, #ffb6c1 0%, #f8a1b5 80%);
+        border-radius: 20px;
+        box-shadow: 0 4px 24px rgba(250, 170, 180, 0.18);
+        padding: 16px 0;
+        margin-bottom: 32px;
+      }
+      .nav-item {
+        transition: transform 0.3s;
+        font-size: 18px;
+        letter-spacing: 0.5px;
+      }
+      .nav-item a {
+        color: #333;
+        text-decoration: none;
+        padding: 12px 24px;
+        display: block;
+        border-radius: 10px;
+        transition: background 0.4s, color 0.3s, transform 0.3s;
+      }
+      .nav-item a:hover {
+        background: #ffb6c1;
+        color: #fff;
+        transform: scale(1.08);
+        box-shadow: 0 6px 24px rgba(220, 20, 60, 0.18);
+      }
+      .nav-item:hover {
+        transform: scale(1.09);
+      }
+      h1 {
+        text-align: center;
+        color: #af1a4c;
+        font-size: 2.8em;
+        margin-top: 26px;
+      }
+      h2 {
+        color: #c4185b;
+        text-align: center;
+        margin-top: 18px;
+      }
+      h3 {
+        text-align: center;
+        color: #b73460;
+        margin-bottom: 18px;
+        font-size: 1.15em;
+      }
+      .profile-img {
+        display: block;
+        margin: 0 auto;
+        border-radius: 20px;
+        box-shadow: 0 6px 28px #f8a1b5 0.20;
+        max-width: 430px;
+      }
+      .styled-hr {
+        border: none;
+        height: 5px;
+        background: linear-gradient(90deg, #e94d87 40%, #ffd6e7 100%);
+        margin: 32px 0;
+        border-radius: 10px;
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .resume-link h1 {
+        background: linear-gradient(45deg, #f8a1b5 60%, #fff 100%);
+        padding: 8px 30px;
+        border-radius: 28px;
+        box-shadow: 0 2px 12px rgba(248,161,181,0.15);
+        font-size: 1.6em;
+        cursor: pointer;
+        transition: background 0.7s, color 0.5s, box-shadow 0.5s;
+        color: #af1a4c;
+        text-align: center;
+        margin: 0 auto;
+        display: inline-block;
+      }
+      .resume-link h1:hover {
+        background: #fdc4d6;
+        color: #fff;
+        box-shadow: 0 4px 24px #f8a1b5 0.17;
+      }
+      .marks-table {
+        border-collapse: collapse;
+        width: 80%;
+        margin: 0 auto 24px auto;
+        box-shadow: 0 4px 18px rgba(220, 20, 60, 0.12);
+        font-size: 18px;
+        background: #fff;
+      }
+      .marks-table th,
+      .marks-table td {
+        border: 1px solid #ffb6c1;
+        padding: 13px 24px;
+        text-align: center;
+        background: #fff0f6;
+        transition: background 0.3s;
+      }
+      .marks-table th {
+        background: #fdc4d6;
+        font-size: 20px;
+      }
+      .marks-table tr:hover td {
+        background: #ffe4eb;
+      }
+      .footer {
+        text-align: center;
+        font-size: 16px;
+        color: #af1a4c;
+        background: #fff0f6;
+        border-radius: 20px;
+        margin: 38px auto 8px auto;
+        padding: 12px 0;
+        box-shadow: 0 2px 12px #f8a1b5 0.08;
+        width: 70%;
+        transition: background 0.3s;
+      }
+      .footer:hover {
+        background: #ffe4eb;
+      }
+      .qa-section {
+        margin: 28px auto;
+        background: #fff0f6;
+        border-radius: 15px;
+        box-shadow: 0 2px 10px #f8a1b5 0.10;
+        padding: 14px 22px;
+        font-size: 17px;
+        width: 75%;
+        color: #a82a55;
+      }
+      @media (max-width: 720px) {
+        #navbar, #socials {
+          flex-direction: column;
+          gap: 8px;
+          border-radius: 15px;
+        }
+        .marks-table {
+          width: 98%;
+          font-size: 15px;
+          padding: 5px;
+        }
+        .footer, .qa-section {
+          width: 97%;
+          padding: 8px 10px;
+        }
+        .profile-img {
+          max-width: 98vw;
+        }
+      }
+    </style>
   </head>
   <body bgcolor="pink">
 

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Piyush Chaubey - Portfolio</title>
+  <title>Piyush Document</title>
   <style>
     body {
       font-family: 'Segoe UI', Arial, sans-serif;
@@ -16,12 +16,12 @@
     }
 
     /* Fade-in */
-    body h1, body h2, body h3, section, #navbar, #socials, .footer, .qa-section {
+    body h1, body h2, body h3, body table, body img, #navbar, #socials, .footer, .qa-section {
       opacity: 0;
       transform: translateY(40px);
       transition: opacity 1s cubic-bezier(.5,1,.89,1), transform 1s;
     }
-    body.loaded h1, body.loaded h2, body.loaded h3, body.loaded section,
+    body.loaded h1, body.loaded h2, body.loaded h3, body.loaded table, body.loaded img,
     body.loaded #navbar, body.loaded #socials, body.loaded .footer, body.loaded .qa-section {
       opacity: 1;
       transform: translateY(0);
@@ -87,37 +87,42 @@
     }
 
     /* Headings */
-    h1,h2,h3 {
+    h1 {
       text-align: center;
       color: #af1a4c;
+      font-size: 2.2em;
       margin-top: 20px;
     }
-    h2,h3 {
+    h2 {
+      color: #c4185b;
+      text-align: center;
+      margin-top: 14px;
+      font-size: 1.2em;
+    }
+    h3 {
+      text-align: center;
       color: #b73460;
-    }
-
-    /* Section */
-    section {
-      margin: 50px auto;
-      padding: 20px;
-      width: 85%;
-      max-width: 900px;
-    }
-    section h2, section h3 {
-      display: inline-block;
-      border-bottom: 3px solid #fdc4d6;
-      padding-bottom: 6px;
-      margin-bottom: 20px;
-      font-size: 1.3em;
+      margin-bottom: 16px;
+      font-size: 1.05em;
     }
 
     /* Profile image */
     .profile-img {
       display: block;
-      margin: 20px auto;
+      margin: 0 auto;
       border-radius: 20px;
       box-shadow: 0 6px 28px rgba(248,161,181,0.2);
-      max-width: 300px;
+      max-width: 400px;
+    }
+
+    /* Stylish HR */
+    .styled-hr {
+      border: none;
+      height: 4px;
+      background: linear-gradient(90deg, #e94d87 40%, #ffd6e7 100%);
+      margin: 28px auto;
+      border-radius: 10px;
+      width: 80%;
     }
 
     /* Resume link */
@@ -126,11 +131,11 @@
       padding: 6px 28px;
       border-radius: 28px;
       box-shadow: 0 2px 12px rgba(248,161,181,0.15);
-      font-size: 1.2em;
+      font-size: 1.3em;
       cursor: pointer;
       color: #af1a4c;
       text-align: center;
-      margin: 20px auto;
+      margin: 0 auto;
       display: inline-block;
     }
     .resume-link h1:hover {
@@ -142,7 +147,7 @@
     /* Table */
     .marks-table {
       border-collapse: collapse;
-      width: 100%;
+      width: 80%;
       margin: 0 auto 24px auto;
       box-shadow: 0 4px 18px rgba(220, 20, 60, 0.12);
       font-size: 14px;
@@ -183,7 +188,7 @@
       box-shadow: 0 2px 10px rgba(248,161,181,0.1);
       padding: 14px 22px;
       font-size: 14px;
-      width: 85%;
+      width: 75%;
       color: #a82a55;
     }
 
@@ -192,7 +197,7 @@
       #navbar, #socials { flex-direction: column; gap: 8px; }
       .marks-table { width: 98%; font-size: 12px; }
       .footer, .qa-section { width: 95%; font-size: 12px; }
-      .profile-img { max-width: 80vw; }
+      .profile-img { max-width: 95vw; }
     }
   </style>
 </head>
@@ -212,116 +217,105 @@
     </div>
   </div>
 
-  <!-- Intro Section -->
-  <section id="home">
-    <h1>Piyush Chaubey</h1>
-    <img src="piyush.jpg" alt="Piyush's Image" class="profile-img">
-    <h2>
-      I am Piyush Chaubey, currently a faculty member at R.K.T. College.<br>
-      I have successfully completed my B.Sc. IT with an overall 6-semester average CGPA of 9.55.<br>
-      I believe in Lord Krishna and strive to bring spiritual balance into my professional and personal life.<br>
-      My dedication guides me in supporting and inspiring my students.
-    </h2>
-  </section>
+  <!-- Welcome -->
+  <h1 id="home">Piyush Chaubey</h1>
+  <img src="piyush.jpg" alt="Piyush's Image" class="profile-img">
+  <hr class="styled-hr">
 
-  <!-- Resume Section -->
-  <section>
-    <center>
-      <a href="https://docs.google.com/document/d/1Xz6UJ0LovadwIP3plrelCWertzFEPnzX/edit?usp=sharing"
-         target="_blank" class="resume-link">
-        <h1>Download My Resume</h1>
-      </a>
-    </center>
-  </section>
+  <!-- Intro -->
+  <h2>
+    I am Piyush Chaubey, currently a faculty member at R.K.T. College.<br>
+    I have successfully completed my B.Sc. IT with an overall 6-semester average CGPA of 9.55.<br>
+    I believe in Lord Krishna and strive to bring spiritual balance into my professional and personal life.<br>
+    My dedication guides me in supporting and inspiring my students.
+  </h2>
+  <hr class="styled-hr">
+
+  <!-- Resume -->
+  <center>
+    <a href="https://docs.google.com/document/d/1Xz6UJ0LovadwIP3plrelCWertzFEPnzX/edit?usp=sharing"
+       target="_blank" class="resume-link">
+      <h1>Download My Resume</h1>
+    </a>
+  </center>
+  <hr class="styled-hr">
 
   <!-- Socials -->
-  <section>
-    <h3>Connect with Me</h3>
-    <div id="socials">
-      <div class="nav-item"><a href="https://instagram.com/piyush_chaubeyy" target="_blank">Instagram</a></div>
-      <div class="nav-item"><a href="https://wa.link/h2cd0t" target="_blank">WhatsApp</a></div>
-      <div class="nav-item"><a href="https://www.linkedin.com/in/piyush-chaubey" target="_blank">LinkedIn</a></div>
-    </div>
-  </section>
+  <div id="socials">
+    <div class="nav-item"><a href="https://instagram.com/piyush_chaubeyy" target="_blank">Instagram</a></div>
+    <div class="nav-item"><a href="https://wa.link/h2cd0t" target="_blank">WhatsApp</a></div>
+    <div class="nav-item"><a href="https://www.linkedin.com/in/piyush-chaubey" target="_blank">LinkedIn</a></div>
+  </div>
+  <hr class="styled-hr">
 
-  <!-- Skills -->
-  <section id="skills">
-    <h3>My Skills</h3>
-    <table class="marks-table">
-      <thead>
-        <tr>
-          <th>Technology</th>
-          <th>Level</th>
-          <th>Experience</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr><td>C</td><td>Strong</td><td>Data Structures, Problem Solving</td></tr>
-        <tr><td>C++</td><td>Advanced</td><td>OOP, Competitive Coding, DSA</td></tr>
-        <tr><td>HTML & CSS</td><td>Advanced</td><td>Portfolio, Frontend Design</td></tr>
-        <tr><td>Python</td><td>Intermediate</td><td>Automation, Scripting</td></tr>
-        <tr><td>Backend Development</td><td>Intermediate</td><td>APIs, Databases</td></tr>
-      </tbody>
-    </table>
-  </section>
+  <!-- Skills Section -->
+  <h3 id="skills">My Skills</h3>
+  <table class="marks-table">
+    <thead>
+      <tr>
+        <th>Technology</th>
+        <th>Level</th>
+        <th>Experience</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>C</td><td>Strong</td><td>Data Structures, Problem Solving</td></tr>
+      <tr><td>C++</td><td>Advanced</td><td>OOP, Competitive Coding, DSA</td></tr>
+      <tr><td>HTML & CSS</td><td>Advanced</td><td>Portfolio, Frontend Design</td></tr>
+      <tr><td>Python</td><td>Intermediate</td><td>Automation, Scripting</td></tr>
+      <tr><td>Backend Development</td><td>Intermediate</td><td>APIs, Databases</td></tr>
+    </tbody>
+  </table>
+  <hr class="styled-hr">
 
-  <!-- Qualifications -->
-  <section id="qualification">
-    <h3>Academic Qualifications</h3>
-    <table class="marks-table">
-      <thead>
-        <tr>
-          <th>Course / Standard</th>
-          <th>Institute / Board</th>
-          <th>Marks / CGPA</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr><td>B.Sc. IT (Overall)</td><td>R.K.T. College</td><td>9.55</td></tr>
-        <tr><td>B.Sc. IT (Sem 6)</td><td>R.K.T. College</td><td>9.7</td></tr>
-        <tr><td>B.Sc. IT (Sem 5)</td><td>R.K.T. College</td><td>8.9</td></tr>
-        <tr><td>B.Sc. IT (Sem 4)</td><td>R.K.T. College</td><td>9.2</td></tr>
-        <tr><td>B.Sc. IT (Sem 3)</td><td>R.K.T. College</td><td>10.0</td></tr>
-        <tr><td>B.Sc. IT (Sem 2)</td><td>R.K.T. College</td><td>10.0</td></tr>
-        <tr><td>B.Sc. IT (Sem 1)</td><td>R.K.T. College</td><td>9.5</td></tr>
-        <tr><td>HSC</td><td>Maharashtra State Board</td><td>60%</td></tr>
-        <tr><td>SSC</td><td>Maharashtra State Board</td><td>79.2%</td></tr>
-      </tbody>
-    </table>
-  </section>
+  <!-- Qualifications Table -->
+  <h3 id="qualification">Academic Qualifications</h3>
+  <table class="marks-table">
+    <thead>
+      <tr>
+        <th>Course / Standard</th>
+        <th>Institute / Board</th>
+        <th>Marks / CGPA</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>B.Sc. IT (Overall)</td><td>R.K.T. College</td><td>9.55</td></tr>
+      <tr><td>B.Sc. IT (Sem 6)</td><td>R.K.T. College</td><td>9.7</td></tr>
+      <tr><td>B.Sc. IT (Sem 5)</td><td>R.K.T. College</td><td>8.9</td></tr>
+      <tr><td>B.Sc. IT (Sem 4)</td><td>R.K.T. College</td><td>9.2</td></tr>
+      <tr><td>B.Sc. IT (Sem 3)</td><td>R.K.T. College</td><td>10.0</td></tr>
+      <tr><td>B.Sc. IT (Sem 2)</td><td>R.K.T. College</td><td>10.0</td></tr>
+      <tr><td>B.Sc. IT (Sem 1)</td><td>R.K.T. College</td><td>9.5</td></tr>
+      <tr><td>HSC</td><td>Maharashtra State Board</td><td>60%</td></tr>
+      <tr><td>SSC</td><td>Maharashtra State Board</td><td>79.2%</td></tr>
+    </tbody>
+  </table>
 
   <!-- Address -->
-  <section>
-    <h3>Address</h3>
-    <p style="text-align:center;">
-      <a href="https://maps.app.goo.gl/cxnctitFsntRHAFx9" target="_blank">View on Google Maps</a>
-    </p>
-  </section>
+  <h2>Address: <a href="https://maps.app.goo.gl/cxnctitFsntRHAFx9" target="_blank">View on Google Maps</a></h2>
 
-  <!-- About -->
-  <section id="about">
-    <h3>About Me</h3>
-    <div class="qa-section">
-      <p><b>Name:</b> Piyush Chaubey</p>
-      <p><b>Phone:</b> <a href="tel:+917498565697">+91 7498565697</a></p>
-      <p><b>Email:</b> <a href="mailto:piyushchaubey0621@gmail.com">piyushchaubey0621@gmail.com</a></p>
-      <p><b>Current Role:</b> Faculty member at R.K.T. College</p>
-      <p><b>Belief:</b> Strong faith in Lord Krishna, striving for balance between spirituality and professional life.</p>
-    </div>
-  </section>
+    <!-- About Me -->
+  <hr class="styled-hr">
+  <h3 id="about">About Me</h3>
+  <div class="qa-section">
+    <p><b>Name:</b> Piyush Chaubey</p>
+    <p><b>Phone:</b> <a href="tel:+917498565697">+91 7498565697</a></p>
+    <p><b>Email:</b> <a href="mailto:piyushchaubey0621@gmail.com">piyushchaubey0621@gmail.com</a></p>
+    <p><b>Current Role:</b> Faculty member at R.K.T. College</p>
+    <p><b>Belief:</b> Strong faith in Lord Krishna, striving for a balance between spirituality and professional life.</p>
+  </div>
 
-  <!-- Q&A -->
-  <section>
-    <h3>Frequently Asked Questions</h3>
-    <div class="qa-section">
-      <p><b>Q:</b> What is your current position?<br><b>A:</b> Faculty member at R.K.T. College after B.Sc. IT.</p>
-      <p><b>Q:</b> How does your spiritual life benefit your teaching career?<br><b>A:</b> It gives me focus, empathy, and balance for guiding students.</p>
-      <p><b>Q:</b> Which social platforms do you use?<br><b>A:</b> Instagram, WhatsApp, and LinkedIn.</p>
-    </div>
-  </section>
 
   <!-- Footer -->
-  <div class="footer">&copy; 2023 - All Rights Reserved | Piyush Chaubey</div>
+  <div class="footer">&copy; Copyright reserved since 2023</div>
+
+  <!-- Q&A -->
+  <div class="qa-section">
+    <h2>Frequently Asked Questions</h2>
+    <p><b>Q:</b> What is your current position?<br><b>A:</b> Faculty member at R.K.T. College after B.Sc. IT.</p>
+    <p><b>Q:</b> How does your spiritual life benefit your teaching career?<br><b>A:</b> It gives me focus, empathy, and balance for guiding students.</p>
+    <p><b>Q:</b> Which social platforms do you use?<br><b>A:</b> Instagram, WhatsApp, and LinkedIn.</p>
+  </div>
 
   <script>
     window.onload = function() {

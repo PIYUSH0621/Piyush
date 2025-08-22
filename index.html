@@ -3,308 +3,189 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Piyush Document</title>
+  <title>Piyush Chaubey - Portfolio</title>
   <style>
     body {
-      font-family: 'Segoe UI', Arial, sans-serif;
-      background: linear-gradient(120deg, #ffe0ec 0%, #fffbea 100%);
-      color: #2c2342;
+      font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      min-height: 100vh;
-      font-size: 14px;
-    }
-
-    /* Fade-in */
-    body h1, body h2, body h3, body table, body img, #navbar, #socials, .footer, .qa-section {
-      opacity: 0;
-      transform: translateY(40px);
-      transition: opacity 1s cubic-bezier(.5,1,.89,1), transform 1s;
-    }
-    body.loaded h1, 
-    body.loaded h2,
-    body.loaded h3,
-    body.loaded table,
-    body.loaded img,
-    body.loaded #navbar,
-    body.loaded #socials,
-    body.loaded .footer,
-    body.loaded .qa-section {
-      opacity: 1;
-      transform: translateY(0);
+      background: #fffafc;
+      color: #333;
+      text-align: center;
     }
 
     /* Navbar */
-    #navbar, #socials {
+    .navbar {
       display: flex;
       justify-content: center;
-      gap: 28px;
-      background: linear-gradient(90deg, #ffb6c1 0%, #f8a1b5 80%);
-      border-radius: 20px;
-      box-shadow: 0 4px 24px rgba(250, 170, 180, 0.18);
-      padding: 16px 0;
-      margin-bottom: 32px;
-    }
-    .nav-item {
-      position: relative;
-      font-size: 14px;
-      transition: transform 0.3s;
-    }
-    .nav-item a {
-      color: #333;
-      text-decoration: none;
-      padding: 10px 18px;
-      display: block;
-      border-radius: 10px;
-      transition: background 0.4s, color 0.3s, transform 0.3s;
-    }
-    .nav-item a:hover {
       background: #ffb6c1;
-      color: #fff;
-      transform: scale(1.05);
-      box-shadow: 0 6px 24px rgba(220, 20, 60, 0.18);
+      padding: 14px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .nav-item {
+      margin: 0 14px;
+      position: relative;
+    }
+
+    .nav-item a, .dropbtn {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 8px 14px;
+      border-radius: 8px;
+      transition: background 0.3s;
+    }
+
+    .nav-item a:hover, .dropbtn:hover {
+      background: #a82a55;
     }
 
     /* Dropdown */
     .dropdown-content {
       display: none;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      min-width: 180px;
+      position: relative; /* fixed to avoid overlap */
+      margin-top: 6px;
       background: #fff0f6;
-      box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
       border-radius: 10px;
-      z-index: 1000;
+      padding: 5px 0;
     }
+
     .dropdown-content a {
+      display: block;
       padding: 10px 16px;
       text-align: left;
+      color: #a82a55;
     }
+
     .dropdown-content a:hover {
       background: #ffb6c1;
       color: #fff;
     }
+
     .dropdown:hover .dropdown-content {
       display: block;
     }
 
-    /* Headings */
+    /* Sections */
     h1 {
-      text-align: center;
-      color: #af1a4c;
-      font-size: 2.2em;
       margin-top: 20px;
-    }
-    h2 {
-      color: #c4185b;
-      text-align: center;
-      margin-top: 14px;
-      font-size: 1.2em;
-    }
-    h3 {
-      text-align: center;
-      color: #b73460;
-      margin-bottom: 16px;
-      font-size: 1.05em;
-    }
-
-    /* Profile image */
-    .profile-img {
-      display: block;
-      margin: 0 auto;
-      border-radius: 20px;
-      box-shadow: 0 6px 28px rgba(248,161,181,0.2);
-      max-width: 400px;
-    }
-
-    /* Stylish HR */
-    .styled-hr {
-      border: none;
-      height: 4px;
-      background: linear-gradient(90deg, #e94d87 40%, #ffd6e7 100%);
-      margin: 28px auto;
-      border-radius: 10px;
-      width: 80%;
-    }
-
-    /* Resume link */
-    .resume-link h1 {
-      background: linear-gradient(45deg, #f8a1b5 60%, #fff 100%);
-      padding: 6px 28px;
-      border-radius: 28px;
-      box-shadow: 0 2px 12px rgba(248,161,181,0.15);
-      font-size: 1.3em;
-      cursor: pointer;
-      color: #af1a4c;
-      text-align: center;
-      margin: 0 auto;
-      display: inline-block;
-    }
-    .resume-link h1:hover {
-      background: #fdc4d6;
-      color: #fff;
-      box-shadow: 0 4px 24px rgba(248,161,181,0.17);
-    }
-
-    /* Table */
-    .marks-table {
-      border-collapse: collapse;
-      width: 80%;
-      margin: 0 auto 24px auto;
-      box-shadow: 0 4px 18px rgba(220, 20, 60, 0.12);
-      font-size: 14px;
-      background: #fff;
-    }
-    .marks-table th,
-    .marks-table td {
-      border: 1px solid #ffb6c1;
-      padding: 10px 18px;
-      text-align: center;
-      background: #fff0f6;
-    }
-    .marks-table th {
-      background: #fdc4d6;
-      font-size: 15px;
-    }
-    .marks-table tr:hover td {
-      background: #ffe4eb;
-    }
-
-    /* Footer */
-    .footer {
-      text-align: center;
-      font-size: 14px;
-      color: #af1a4c;
-      background: #fff0f6;
-      border-radius: 20px;
-      margin: 36px auto 8px auto;
-      padding: 10px 0;
-      box-shadow: 0 2px 12px rgba(248,161,181,0.08);
-      width: 70%;
-    }
-
-    /* Q&A */
-    .qa-section {
-      margin: 28px auto;
-      background: #fff0f6;
-      border-radius: 15px;
-      box-shadow: 0 2px 10px rgba(248,161,181,0.1);
-      padding: 14px 22px;
-      font-size: 14px;
-      width: 75%;
       color: #a82a55;
     }
 
-    /* Responsive */
-    @media (max-width: 720px) {
-      #navbar, #socials {
-        flex-direction: column;
-        gap: 8px;
-      }
-      .marks-table {
-        width: 98%;
-        font-size: 12px;
-      }
-      .footer, .qa-section {
-        width: 95%;
-        font-size: 12px;
-      }
-      .profile-img {
-        max-width: 95vw;
-      }
+    .profile-img {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      margin: 20px auto;
+      border: 5px solid #ffb6c1;
+      box-shadow: 0 4px 12px rgba(220,20,60,0.2);
+    }
+
+    h3 {
+      color: #a82a55;
+      margin-top: 30px;
+    }
+
+    .styled-hr {
+      border: none;
+      border-top: 2px solid #ffb6c1;
+      margin: 30px auto;
+      width: 80%;
+    }
+
+    /* Skills */
+    .skills-container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin: 20px auto;
+      width: 80%;
+    }
+
+    .skill {
+      background: #fff0f6;
+      padding: 12px 20px;
+      border-radius: 12px;
+      font-size: 15px;
+      color: #a82a55;
+      font-weight: bold;
+      box-shadow: 0 4px 12px rgba(248,161,181,0.15);
+      transition: transform 0.3s, background 0.3s, color 0.3s;
+    }
+
+    .skill:hover {
+      background: #ffb6c1;
+      color: #fff;
+      transform: scale(1.08);
+      box-shadow: 0 6px 20px rgba(220,20,60,0.2);
+    }
+
+    /* Social Links */
+    .socials a {
+      margin: 0 12px;
+      text-decoration: none;
+      color: #a82a55;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    .socials a:hover {
+      color: #ff1493;
     }
   </style>
 </head>
 <body>
 
-  <!-- Navigation -->
-  <div id="navbar">
+  <!-- Navbar -->
+  <div class="navbar">
     <div class="nav-item"><a href="#home">Home</a></div>
+    <div class="nav-item"><a href="#resume">Resume</a></div>
     <div class="nav-item"><a href="#skills">Skills</a></div>
-    <div class="nav-item"><a href="#qualification">Qualifications</a></div>
-     <div class="nav-item"><a href="#about">About Me</a></div>
     <div class="nav-item dropdown">
-      <a href="#">Projects ▼</a>
+      <a href="#" class="dropbtn">Projects</a>
       <div class="dropdown-content">
         <a href="https://visit-our-india.netlify.app/" target="_blank">Visit Our India</a>
         <a href="https://anand-vrindavan-dham.lovestoblog.com" target="_blank">Anand Vrindavan Dham</a>
       </div>
     </div>
-
-   
+    <div class="nav-item"><a href="#socials">Socials</a></div>
   </div>
 
-  <!-- Welcome -->
-  <h1 id="home">Piyush chaubey</h1>
-  <img src="piyush.jpg" alt="Piyush's Image" class="profile-img">
+  <!-- Profile -->
+  <h1 id="home">Piyush Chaubey</h1>
+  <img src="your-photo.jpg" alt="Profile Picture" class="profile-img">
 
   <hr class="styled-hr">
 
-  <!-- Intro -->
-  <h2>
-    I am Piyush Chaubey, currently a faculty member at R.K.T. College.<br>
-    I have successfully completed my B.Sc. IT with an overall 6-semester average CGPA of 9.55.<br>
-    I believe in Lord Krishna and strive to bring spiritual balance into my professional and personal life.<br>
-    My dedication guides me in supporting and inspiring my students.
-  </h2>
+  <!-- Resume -->
+  <h3 id="resume">My Resume</h3>
+  <p>Here you can add your educational details, experiences, and achievements.</p>
 
   <hr class="styled-hr">
-  <center>
-    <a href="https://docs.google.com/document/d/1Xz6UJ0LovadwIP3plrelCWertzFEPnzX/edit?usp=sharing" target="_blank" class="resume-link">
-      <h1>Download My Resume</h1>
-    </a>
-  </center>
+
+  <!-- Skills -->
+  <h3 id="skills">My Skills</h3>
+  <div class="skills-container">
+    <div class="skill">C++</div>
+    <div class="skill">Python</div>
+    <div class="skill">C</div>
+    <div class="skill">HTML & CSS</div>
+  </div>
+
   <hr class="styled-hr">
 
   <!-- Socials -->
-  <div id="socials">
-    <div class="nav-item"><a href="https://instagram.com/piyush_chaubeyy" target="_blank">Instagram</a></div>
-    <div class="nav-item"><a href="https://wa.link/h2cd0t" target="_blank">WhatsApp</a></div>
-    <div class="nav-item"><a href="https://www.linkedin.com/in/piyush-chaubey" target="_blank">LinkedIn</a></div>
+  <h3 id="socials">Connect With Me</h3>
+  <div class="socials">
+    <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+    <a href="https://github.com" target="_blank">GitHub</a>
+    <a href="https://twitter.com" target="_blank">Twitter</a>
   </div>
 
-  <hr class="styled-hr">
-
-  <!-- Table -->
-  <h3 id="qualification">Academic Qualifications</h3>
-  <table class="marks-table">
-    <thead>
-      <tr>
-        <th>Course / Standard</th>
-        <th>Institute / Board</th>
-        <th>Marks / CGPA</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr><td>B.Sc. IT (Overall)</td><td>R.K.T. College</td><td>9.55</td></tr>
-      <tr><td>B.Sc. IT (Sem 6)</td><td>R.K.T. College</td><td>9.7</td></tr>
-      <tr><td>B.Sc. IT (Sem 5)</td><td>R.K.T. College</td><td>8.9</td></tr>
-      <tr><td>B.Sc. IT (Sem 4)</td><td>R.K.T. College</td><td>9.2</td></tr>
-      <tr><td>B.Sc. IT (Sem 3)</td><td>R.K.T. College</td><td>10.0</td></tr>
-      <tr><td>B.Sc. IT (Sem 2)</td><td>R.K.T. College</td><td>10.0</td></tr>
-      <tr><td>B.Sc. IT (Sem 1)</td><td>R.K.T. College</td><td>9.5</td></tr>
-      <tr><td>HSC</td><td>Maharashtra State Board</td><td>60%</td></tr>
-      <tr><td>SSC</td><td>Maharashtra State Board</td><td>79.2%</td></tr>
-    </tbody>
-  </table>
-
-  <h2>Address: <a href="https://maps.app.goo.gl/cxnctitFsntRHAFx9" target="_blank">View on Google Maps</a></h2>
-
-  <div class="footer">&copy; Copyright reserved since 2023</div>
-
-  <div class="qa-section">
-    <h2>Frequently Asked Questions</h2>
-    <p><b>Q:</b> What is your current position?<br><b>A:</b> Faculty member at R.K.T. College after B.Sc. IT.</p>
-    <p><b>Q:</b> How does your spiritual life benefit your teaching career?<br><b>A:</b> It gives me focus, empathy, and balance for guiding students.</p>
-    <p><b>Q:</b> Which social platforms do you use?<br><b>A:</b> Instagram, WhatsApp, and LinkedIn.</p>
-  </div>
-
-  <script>
-    window.onload = function() {
-      document.body.classList.add('loaded');
-    };
-  </script>
 </body>
 </html>
-

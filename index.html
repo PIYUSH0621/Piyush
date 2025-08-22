@@ -65,29 +65,32 @@
       box-shadow: 0 6px 24px rgba(220, 20, 60, 0.18);
     }
 
-    /* Dropdown */
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      min-width: 180px;
-      background: #fff0f6;
-      box-shadow: 0 6px 16px rgba(0,0,0,0.15);
-      border-radius: 10px;
-      z-index: 1000;
-    }
-    .dropdown-content a {
-      padding: 10px 16px;
-      text-align: left;
-    }
-    .dropdown-content a:hover {
-      background: #ffb6c1;
-      color: #fff;
-    }
-    .dropdown:hover .dropdown-content {
-      display: block;
-    }
+ /* Dropdown */
+.dropdown-content {
+  display: none;
+  position: relative;   /* instead of absolute */
+  margin-top: 6px;      /* small spacing below Projects button */
+  background: #fff0f6;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  border-radius: 10px;
+  padding: 5px 0;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 10px 16px;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background: #ffb6c1;
+  color: #fff;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
 
     /* Headings */
     h1 {
@@ -307,3 +310,4 @@
   </script>
 </body>
 </html>
+
